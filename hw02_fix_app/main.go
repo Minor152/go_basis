@@ -12,7 +12,9 @@ func main() {
 	path := "data.json"
 
 	fmt.Printf("Enter data file path: ")
-	fmt.Scanln(&path)
+	if _, err := fmt.Scanln(&path); err != nil {
+		fmt.Println(err)
+	}
 
 	var err error
 	var staff []types.Employee
