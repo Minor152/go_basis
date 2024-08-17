@@ -1,4 +1,4 @@
-package init
+package main
 
 import (
 	"fmt"
@@ -8,7 +8,7 @@ import (
 	"github.com/Minor152/go_basis/hw02_fix_app/types"
 )
 
-func init() {
+func main() {
 	path := "data.json"
 
 	fmt.Printf("Enter data file path: ")
