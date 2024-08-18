@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"log"
 
 	"github.com/Minor152/go_basis/hw02_fix_app/printer"
 	"github.com/Minor152/go_basis/hw02_fix_app/reader"
@@ -9,6 +10,10 @@ import (
 )
 
 func main() {
+
+	var err error
+	var staff []types.Employee
+
 	path := "data.json"
 
 	fmt.Printf("Enter data file path: ")
@@ -16,16 +21,14 @@ func main() {
 		fmt.Println(err)
 	}
 
-	var err error
-	var staff []types.Employee
-
 	if len(path) == 0 {
 		path = "data.json"
 	}
 
 	staff, err = reader.ReadJSON(path)
-
-	fmt.Print(err)
+	if err != nil {
+		log.Fatal(err)
+	}
 
 	printer.PrintStaff(staff)
 }
