@@ -10,16 +10,15 @@ import (
 )
 
 func main() {
-
-	var err error
-	var staff []types.Employee
-
 	path := "data.json"
 
 	fmt.Printf("Enter data file path: ")
 	if _, err := fmt.Scanln(&path); err != nil {
 		fmt.Println(err)
 	}
+
+	var err error
+	var staff []types.Employee
 
 	if len(path) == 0 {
 		path = "data.json"
