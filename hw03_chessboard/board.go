@@ -20,13 +20,11 @@ func (b *CHESSBOARD) Init() *CHESSBOARD {
 	if err != nil {
 		log.Fatalln(fmt.Errorf("%w", err))
 	}
-
 	fmt.Println("Enter the number of columns: ")
 	_, err = fmt.Scanf("%d", &b.columns)
 	if err != nil {
 		log.Fatalln(fmt.Errorf("%w", err))
 	}
-
 	return b
 }
 
