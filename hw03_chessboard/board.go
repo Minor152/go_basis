@@ -35,10 +35,8 @@ func (b *CHESSBOARD) Print() string {
 }
 
 func (b *CHESSBOARD) Generate() {
-
 	for l := 0; l < b.rows; l++ {
 		if l%2 == 0 {
-
 			b.board.WriteString("\n")
 			for c := 0; c < b.columns; c++ {
 				if c%2 == 0 {
@@ -47,8 +45,9 @@ func (b *CHESSBOARD) Generate() {
 					b.board.WriteString("#")
 				}
 			}
-		} else {
+		}
 
+		if l%2 != 0 {
 			b.board.WriteString("\n")
 			for c := 0; c < b.columns; c++ {
 				if c%2 == 0 {
@@ -58,6 +57,5 @@ func (b *CHESSBOARD) Generate() {
 				}
 			}
 		}
-
 	}
 }
