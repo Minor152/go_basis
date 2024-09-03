@@ -1,5 +1,11 @@
 package main
 
+import "fmt"
+
 func main() {
-	// Place your code here.
+	var chessboard CHESSBOARD
+
+	chessboard.Init().Generate()
+
+	fmt.Println(chessboard.Print())
 }
